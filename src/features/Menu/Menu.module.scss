@@ -1,0 +1,99 @@
+@use "@/global/scss/vars";
+
+.menu {
+	flex-grow: 1;
+	flex-basis: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	@media (max-width: vars.$tablet) {
+		transition: backdrop-filter .8s, background-color .8s;
+		pointer-events: none;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(#000, 0);
+		backdrop-filter: blur(0);
+		padding: 16px;
+	}
+}
+
+.opened {
+	@media (max-width: vars.$tablet) {
+		background-color: rgba(#000, 80%);
+		backdrop-filter: blur(12px);
+		pointer-events: all;
+	}
+
+	.window {
+		@media (max-width: vars.$tablet) {
+			transform: translateY(0);
+		}
+	}
+}
+
+.window {
+	display: flex;
+	padding: 12px;
+	flex-basis: 100%;
+
+	@media (max-width: vars.$tablet) {
+		transition: transform .5s;
+		background-color: #fff;
+		border-radius: 12px;
+		flex-direction: column;
+
+		transform: translateY(calc(-100% - 24px));
+	}
+
+	* {
+		@media (max-width: vars.$tablet) {
+			color: #000;
+		}
+	}
+}
+
+.close {
+	display: none;
+	justify-content: flex-end;
+
+	@media (max-width: vars.$tablet) {
+		display: flex;
+	}
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-evenly;
+	flex-grow: 1;
+
+	@media (max-width: vars.$tablet) {
+		display: contents;
+	}
+}
+
+.button {
+	@media (max-width: vars.$tablet) {
+		background-color: #000;
+		color: #fff;
+		margin-top: 40px;
+	}
+}
+
+.menuButton {
+	flex-basis: 36px;
+	height: 36px;
+	flex-shrink: 0;
+	padding: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: vars.$tablet) {
+		display: flex;
+	}
+}
