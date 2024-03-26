@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { jost } from '@/global/fonst'
-import { Header } from '@/widgets/Header';
+import { Header } from '@/widgets/Header'
 
 export const metadata: Metadata = {
   title: "Inreal Studio",
@@ -12,10 +12,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={jost.className}>
-        <Header />
-        <main>
-          {children}
-        </main>
+        <div className="wrapper">
+          <Header />
+          <main>
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

@@ -1,0 +1,24 @@
+.tab {
+	transition: background-color .3s, color .3s;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 120%;
+	text-transform: uppercase;
+	letter-spacing: -0.01em;
+	padding: 6px 8px;
+	border-radius: 8px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgba(#fff, 10%);
+	}
+
+	&:active {
+		background-color: rgba(#fff, 20%);
+	}
+
+	&.active {
+		background-color: #fff;
+		color: #000;
+	}
+}
