@@ -12,18 +12,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Suspense fallback={<>Loading, please wait...</>}>
-      <html lang="en">
-        <body className={jost.className}>
-          <div className="wrapper">
+
+    <html lang="en">
+      <body className={jost.className}>
+        <div className="wrapper">
+          <Suspense fallback={<>Loading, please wait...</>}>
             <Header />
-            <main>
-              {children}
-            </main>
-          </div>
-          <ScrollTrigger />
-        </body>
-      </html>
-    </Suspense>
+          </Suspense>
+          <main>
+            {children}
+          </main>
+        </div>
+        <ScrollTrigger />
+      </body>
+    </html>
+
   );
 }
