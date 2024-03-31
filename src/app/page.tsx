@@ -6,12 +6,13 @@ import { manrope } from '@/global/fonst'
 import { Button } from '@/shared/components/Button'
 import { ArrowIcon } from '@/shared/icons/ArrowForward'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 export default function HomePage() {
   const { overlay, label, button, title } = styles
 
   return (
-    <>
+    <Suspense>
       <div className={overlay} data-prevent-header>
         <div className={title}>
           <span className={clsx(label, manrope.className)}>Креатив в 3D</span>
@@ -27,6 +28,6 @@ export default function HomePage() {
         </Link>
       </div>
       <HomeBackground />
-    </>
+    </Suspense>
   )
 }
