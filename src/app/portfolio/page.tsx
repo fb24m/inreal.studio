@@ -7,32 +7,35 @@ import { Title1 } from '@/shared/components/Title1'
 import styles from './page.module.scss'
 import { PortfolioTab } from '@/widgets/PortfolioTab'
 import { wordpress } from '@/shared/api/wordpress'
+import { Suspense } from 'react'
 
 const Portfolio = async () => {
 	const categories = await wordpress.getWorkTypes()
 
 	return (
-		<div className={styles.portfolio}>
-			<Container className={styles.container}>
-				<Title1 className={styles.title}>Портфолио</Title1>
-				<Tabs className={styles.tabs} defaultActive={categories[0].id}>
-					<TabsList>
+		<Suspense fallback={<>Подождите...</>}>
+			<div className={styles.portfolio}>
+				<Container className={styles.container}>
+					<Title1 className={styles.title}>Портфолио</Title1>
+					<Tabs className={styles.tabs} defaultActive={categories[0].id}>
+						<TabsList>
+							{categories.map((category) =>
+								<Tab key={category.id} index={category.id}>{category.name}</Tab>
+							)}
+						</TabsList>
 						{categories.map((category) =>
-							<Tab key={category.id} index={category.id}>{category.name}</Tab>
+							<PortfolioTab
+								key={category.id}
+								category={category.id}
+								title={category.name}
+								description={category.description}
+								good_for={category.acf.good_for}
+							/>
 						)}
-					</TabsList>
-					{categories.map((category) =>
-						<PortfolioTab
-							key={category.id}
-							category={category.id}
-							title={category.name}
-							description={category.description}
-							good_for={category.acf.good_for}
-						/>
-					)}
-				</Tabs>
-			</Container>
-		</div>
+					</Tabs>
+				</Container>
+			</div>
+		</Suspense>
 	)
 }
 
