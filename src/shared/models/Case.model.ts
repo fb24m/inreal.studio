@@ -4,6 +4,7 @@ export interface CaseModel {
 	content: { rendered: string }
 	featured_media: number
 	work_type: number[]
+	slug: string
 	acf: {
 		year: number
 	}

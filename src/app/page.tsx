@@ -23,7 +23,7 @@ export default function HomePage() {
           </Button>
         </div>
         <Link href="/portfolio">
-          <Button appearance="secondary" size="large">смотреть работы</Button>
+          <Button appearance="secondary" size="large" className={styles.portfolioButton}>смотреть работы</Button>
         </Link>
       </div>
       <HomeBackground />

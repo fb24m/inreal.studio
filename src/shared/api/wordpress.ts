@@ -5,6 +5,7 @@ import { WorkTypeModel } from '../models/WorkType.model'
 
 const requestWordpress = async<T>(path: string): Promise<T> => {
 	const response = await request<T>(`https://inreal.studio/wp-json/wp/v2/${path}`, [path])
+	console.log(`requesting path ${path}`)
 	return response
 }
 

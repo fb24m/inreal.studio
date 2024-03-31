@@ -28,4 +28,25 @@
 	text-transform: uppercase;
 	color: #fff;
 	font-weight: 400;
+
+	hyphens: auto;
+	width: calc(100% - 40px);
+
+	@media (max-width: 992px) {
+		font-size: 100px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 64px;
+		bottom: 120px;
+	}
+
+	@media (max-width: 560px) {
+		font-size: 50px;
+		left: 12px;
+	}
+
+	@media (max-width: 425px) {
+		font-size: 32px;
+	}
 }
