@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { jost } from '@/global/fonst'
 import { Header } from '@/widgets/Header'
+import { ScrollTrigger } from '@/shared/components/ScrollTrigger';
 
 export const metadata: Metadata = {
   title: "Inreal Studio",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
         </div>
+        <ScrollTrigger />
       </body>
     </html>
   );

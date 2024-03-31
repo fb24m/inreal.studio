@@ -1,7 +1,13 @@
+@use "@/global/scss/vars";
+
 .tabslist {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	gap: 16px;
-	overflow: hidden;
-	overflow-x: auto;
+
+	@media (max-width: vars.$medium) {
+		justify-content: flex-start;
+		gap: 8px;
+	}
 }

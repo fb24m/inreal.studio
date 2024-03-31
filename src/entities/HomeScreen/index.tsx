@@ -13,7 +13,7 @@ export const HomeScreen = ({ label, img, first, video }: {
 	return (
 		<div className={clsx('screen', wrapper, first && top)}>
 			{video
-				? <video src={img} className={image} autoPlay muted loop></video>
+				? <video className={image} autoPlay muted loop><source src={img} type="video/mp4" /></video>
 				: <Image width={2560} height={1080} src={img} alt="" className={image} />}
 			<h2 className={title}>{label}</h2>
 		</div>

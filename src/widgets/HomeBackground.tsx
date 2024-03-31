@@ -22,8 +22,6 @@ export const HomeBackground = () => {
 
 			if (nextButton) {
 				nextButton.addEventListener('click', () => {
-					console.log('click')
-
 					window.scrollTo({
 						top: window.scrollY + screenHeight,
 						behavior: 'smooth'

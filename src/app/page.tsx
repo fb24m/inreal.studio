@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className={overlay}>
+      <div className={overlay} data-prevent-header>
         <div className={title}>
           <span className={clsx(label, manrope.className)}>Креатив в 3D</span>
           <Button appearance="secondary" className={button} data-next>
