@@ -1,5 +1,6 @@
 export interface CaseProps {
-	imageId: number
+	images: { image: number }[]
+	preview: number
 	title: string
 	year: string
 	description: string

@@ -52,7 +52,8 @@ export const PortfolioTab = async (props: PortfolioTabProps) => {
 					order.map((item, index) =>
 						<Case
 							key={item.id}
-							imageId={item.featured_media}
+							preview={item.featured_media}
+							images={item.acf.images}
 							category={item.work_type[0]}
 							categoryName={props.title}
 							year={JSON.stringify(item.acf.year)}

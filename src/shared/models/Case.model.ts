@@ -7,5 +7,8 @@ export interface CaseModel {
 	slug: string
 	acf: {
 		year: number
+		images: {
+			image: number
+		}[]
 	}
 }

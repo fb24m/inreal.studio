@@ -20,7 +20,7 @@ const HeaderInner = () => {
 				<Link href="/">
 					<Logo />
 				</Link>
-				<Menu />
+				<Menu modalExists={hideHeader} />
 			</Container>
 		</header>
 	)

@@ -9,13 +9,13 @@ import { MenuIcon } from '@/shared/icons/Menu'
 import { CrossIcon } from '@/shared/icons/Cross'
 
 
-export const Menu = () => {
+export const Menu = ({ modalExists }: { modalExists: boolean }) => {
 	const { menu, opened, window, close, navigation, button, menuButton } = styles
 	const [isOpened, setIsOpened] = useState(false)
 
 	return (
 		<>
-			<div className={clsx(menu, isOpened && opened)}>
+			<div className={clsx(menu, (isOpened && !modalExists) && opened)}>
 				<div className={window}>
 					<div className={close} onClick={() => { setIsOpened(false) }}>
 						<CrossIcon />
@@ -24,7 +24,7 @@ export const Menu = () => {
 						<Link href="/portfolio"><Button appearance="transparent">портфолио</Button></Link>
 						<Link href="?modal=socials"><Button appearance="transparent">контакты</Button></Link>
 					</nav>
-					<Link href="?modal=contact" className={button}><Button>Связаться</Button></Link>
+					<Link href="?modal=contact"><Button className={button}>Связаться</Button></Link>
 				</div>
 			</div>
 			<Button className={menuButton} onClick={() => { setIsOpened(true) }}>

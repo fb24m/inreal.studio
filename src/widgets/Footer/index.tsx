@@ -22,7 +22,7 @@ export const Footer = () => {
 					<Link href="tel:88007077653" className={styles.number}>8 (800) 70-77-653</Link>
 				</div>
 				<div className={styles.cards}>
-					<Link className={styles.card} href="#">
+					<Link className={styles.card} href="mailto:info@inreal.studio">
 						<Card className={styles.cardItem}>
 							<span className={styles.title}>Получить коммерческое предложение</span>
 							<span className={styles.label}>по email</span>
@@ -31,7 +31,7 @@ export const Footer = () => {
 							</div>
 						</Card>
 					</Link>
-					<Link className={styles.card} href="#">
+					<Link className={styles.card} href="https://t.me/INREALfedback_bot">
 						<Card className={styles.cardItem}>
 							<span className={styles.title}>Обсудить проект</span>
 							<span className={styles.label}>в telegram</span>
