@@ -8,8 +8,9 @@ import Link from 'next/link'
 import { Container } from '@/shared/components/Container'
 import { useSearchParams } from 'next/navigation'
 import clsx from 'clsx'
+import { Suspense } from 'react'
 
-export const Header = () => {
+const HeaderInner = () => {
 	const searchParams = useSearchParams()
 	const hideHeader = searchParams.has('modal')
 
@@ -24,3 +25,7 @@ export const Header = () => {
 		</header>
 	)
 }
+
+export const Header = () => (
+	<Suspense fallback={<>Header is loading</>}><HeaderInner /></Suspense>
+)

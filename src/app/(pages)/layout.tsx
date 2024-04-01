@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <Suspense fallback={<>Loading, please wait...</>}>
-        <Header />
-      </Suspense>
+      <Header />
       <main>
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
       </main>
       <Footer />
     </>

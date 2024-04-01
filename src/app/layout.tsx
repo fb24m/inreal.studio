@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { jost } from '@/global/fonst'
 import { ScrollTrigger } from '@/shared/components/ScrollTrigger'
-import { type ReactNode } from 'react'
+import { Suspense, type ReactNode } from 'react'
 import { ContactPopup } from '@/widgets/popups/ContactPopup'
 import { SocialsPopup } from '@/widgets/popups/SocialsPopup'
 
@@ -19,9 +19,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div className="wrapper">
           {children}
         </div>
-        <ContactPopup />
-        <SocialsPopup />
-
+        <Suspense>
+          <ContactPopup />
+          <SocialsPopup />
+        </Suspense>
         <ScrollTrigger />
       </body>
     </html>
