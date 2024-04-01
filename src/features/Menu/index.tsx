@@ -21,10 +21,10 @@ export const Menu = () => {
 						<CrossIcon />
 					</div>
 					<nav className={navigation}>
-						<Button appearance="transparent"><Link href="/portfolio">портфолио</Link></Button>
-						<Button appearance="transparent">контакты</Button>
+						<Link href="/portfolio"><Button appearance="transparent">портфолио</Button></Link>
+						<Link href="?modal=socials"><Button appearance="transparent">контакты</Button></Link>
 					</nav>
-					<Button className={button}>Связаться</Button>
+					<Link href="?modal=contact" className={button}><Button>Связаться</Button></Link>
 				</div>
 			</div>
 			<Button className={menuButton} onClick={() => { setIsOpened(true) }}>

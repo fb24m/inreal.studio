@@ -1,31 +1,29 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { jost } from '@/global/fonst'
-import { Header } from '@/widgets/Header'
-import { ScrollTrigger } from '@/shared/components/ScrollTrigger';
-import { Suspense } from 'react';
+import { ScrollTrigger } from '@/shared/components/ScrollTrigger'
+import { type ReactNode } from 'react'
+import { ContactPopup } from '@/widgets/popups/ContactPopup'
+import { SocialsPopup } from '@/widgets/popups/SocialsPopup'
 
 export const metadata: Metadata = {
   title: "Inreal Studio",
   description: "Inreal Studio seo description",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
 
     <html lang="en">
       <body className={jost.className}>
         <div className="wrapper">
-          <Suspense fallback={<>Loading, please wait...</>}>
-            <Header />
-          </Suspense>
-          <main>
-            {children}
-          </main>
+          {children}
         </div>
+        <ContactPopup />
+        <SocialsPopup />
+
         <ScrollTrigger />
       </body>
     </html>
-
   );
 }

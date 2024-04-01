@@ -1,0 +1,64 @@
+@use "@/global/scss/vars";
+
+.title {
+	font-size: 80px;
+	margin-block: 48px;
+
+	@media (max-width: vars.$medium) {
+		font-size: 60px;
+	}
+
+	@media (max-width: vars.$mobile-l) {
+		font-size: 48px;
+	}
+}
+
+h3.cardTitle {
+	font-size: 32px;
+
+
+	@media (max-width: vars.$tablet) {
+		font-size: 24px;
+	}
+
+	@media (max-width: vars.$mobile-l) {
+		font-size: 20px;
+	}
+}
+
+.card {
+	padding-block: 70px;
+	margin-top: 24px;
+
+	@media (max-width: vars.$tablet) {
+		padding-block: 32px;
+	}
+
+	@media (max-width: vars.$mobile-l) {
+		padding-inline: 16px;
+	}
+
+	@media (max-width: vars.$medium) {
+		margin-top: 16px;
+	}
+}
+
+.form {
+	margin-top: 36px;
+	gap: 10px;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	* {
+		@media (max-width: vars.$tablet) {
+			max-width: 100%;
+			padding: 12px;
+		}
+	}
+
+	@media (max-width: vars.$tablet) {
+		flex-direction: column;
+		max-width: 360px;
+	}
+}

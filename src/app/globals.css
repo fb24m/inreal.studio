@@ -62,3 +62,17 @@
 	min-height: 100vh;
 	padding-top: 109px;
 }
+
+html::-webkit-scrollbar {
+	width: 12px;
+	background-color: #111;
+	cursor: pointer;
+}
+
+html::-webkit-scrollbar-thumb {
+	width: 16px;
+	background-color: #fff;
+	border-radius: 999px;
+	border: #111 2px solid;
+	cursor: pointer;
+}
