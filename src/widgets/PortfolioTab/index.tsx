@@ -57,8 +57,8 @@ export const PortfolioTab = async (props: PortfolioTabProps) => {
 							category={item.work_type[0]}
 							categoryName={props.title}
 							year={JSON.stringify(item.acf.year)}
-							description={item.content.rendered}
-							title={item.title.rendered}
+							description={item.content?.rendered}
+							title={item.title?.rendered}
 							position={index}
 							slug={item.slug}
 							className={styles.card}
