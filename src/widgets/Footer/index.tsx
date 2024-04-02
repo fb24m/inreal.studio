@@ -31,7 +31,7 @@ export const Footer = () => {
 							</div>
 						</Card>
 					</Link>
-					<Link className={styles.card} href="https://t.me/INREALfedback_bot">
+					<Link className={styles.card} href="https://t.me/INREAL_feedback_bot" target="_blank">
 						<Card className={styles.cardItem}>
 							<span className={styles.title}>Обсудить проект</span>
 							<span className={styles.label}>в telegram</span>

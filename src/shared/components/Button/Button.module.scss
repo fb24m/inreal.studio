@@ -46,13 +46,17 @@
 		}
 
 		&:hover {
-			background-color: #fff;
-			color: #000;
+			@media(hover: hover) {
+				background-color: #fff;
+				color: #000;
+			}
 
 			* {
-				color: #000;
-				fill: #000;
-				stroke: #000;
+				@media(hover: hover) {
+					color: #000;
+					fill: #000;
+					stroke: #000;
+				}
 			}
 		}
 	}

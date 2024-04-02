@@ -67,11 +67,11 @@ export const HomeBackground = () => {
 
 	return (
 		<div id="home-screens">
-			<HomeScreen label="INREAL.STUDIO" img="/0325.mp4" video first />
-			<HomeScreen label="3d моделирование" img="/3d-modeling.png" />
-			<HomeScreen label="3d Анимация" img="/-f568-47fb-8760-4a58b00a68ec.mp4" video />
-			<HomeScreen label="3d визуализация" img="/-73b9-4060-8f38-c5968c6d6043.mp4" video />
-			<HomeScreen label="Фотограмметрия" img="/photogrammetry.png" />
+			<HomeScreen label="INREAL.STUDIO" image="/inreal.studio.png" video="/0325.mp4" first />
+			<HomeScreen label="3d моделирование" image="/3d-modeling.png" />
+			<HomeScreen label="3d Анимация" image="/3d-animation.png" video="/-f568-47fb-8760-4a58b00a68ec.mp4" />
+			<HomeScreen label="3d визуализация" image="/3d-visualization.png" video="/-73b9-4060-8f38-c5968c6d6043.mp4" />
+			<HomeScreen label="Фотограмметрия" image="/photogrammetry.png" />
 		</div>
 	)
 }

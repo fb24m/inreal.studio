@@ -49,7 +49,7 @@ export const PortfolioTab = async (props: PortfolioTabProps) => {
 			</div>
 			<div className={styles.portfolioCards}>
 				{cards.map((order) =>
-					order.map((item, index) =>
+					order.map((item, index) => <>
 						<Case
 							key={item.id}
 							preview={item.featured_media}
@@ -63,6 +63,7 @@ export const PortfolioTab = async (props: PortfolioTabProps) => {
 							slug={item.slug}
 							className={styles.card}
 						/>
+					</>
 					)
 				)}
 			</div>

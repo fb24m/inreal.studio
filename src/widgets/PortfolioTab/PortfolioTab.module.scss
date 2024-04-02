@@ -67,16 +67,21 @@
 
 	@media (max-width: 640px) {
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, 180px);
+		grid-template-rows: repeat(2, 220px);
 	}
 }
 
 .card {
+
 	&:nth-child(1) {
 		grid-column-start: 1;
 		grid-column-end: 8;
 		grid-row-start: 1;
 		grid-row-end: 3;
+
+		@media (max-width: 992px) {
+			grid-column-end: 9;
+		}
 
 		@media (max-width: 640px) {
 			grid-column-start: 1;
@@ -92,8 +97,8 @@
 		grid-column-end: 10;
 
 		@media (max-width: 992px) {
-			grid-column-start: 6;
-			grid-column-end: 9;
+			grid-column-start: 1;
+			grid-column-end: 5;
 		}
 
 		@media (max-width: 640px) {
@@ -109,7 +114,7 @@
 		grid-row-end: 2;
 
 		@media (max-width: 992px) {
-			grid-column-start: 6;
+			grid-column-start: 5;
 			grid-column-end: 9;
 
 			grid-row-start: auto;

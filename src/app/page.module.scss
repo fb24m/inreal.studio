@@ -57,14 +57,28 @@
 	gap: 6px;
 
 	&:hover {
-		gap: 32px;
+		@media (hover: hover) {
+			gap: 32px;
+		}
 	}
 
 	span {
 		display: inline-block;
 	}
 
+	svg {
+		@media (max-width: 768px) {
+			transform: rotateZ(90deg);
+		}
+	}
+
 	@media (max-width: 768px) {
-		display: none;
+		// display: none;
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+
+		flex-direction: column;
+		padding: 16px 10px;
 	}
 }
