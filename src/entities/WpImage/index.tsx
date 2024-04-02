@@ -6,6 +6,6 @@ export const WpImage = async ({ imageId, ...props }: WpImageProps) => {
 	const media = await wordpress.getMediaById(imageId)
 
 	return (
-		<Image src={media.guid.rendered} alt={media.alt_text} {...props} />
+		<Image src={media?.guid?.rendered} alt={media.alt_text} {...props} />
 	)
 }
