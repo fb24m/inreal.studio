@@ -62,6 +62,16 @@
 		}
 	}
 
+	&:active {
+		gap: 32px;
+
+		svg,
+		svg * {
+			fill: #000;
+			stroke: #000;
+		}
+	}
+
 	span {
 		display: inline-block;
 	}

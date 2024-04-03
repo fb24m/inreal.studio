@@ -16,7 +16,7 @@ const requestWordpress = async<T>(path: string): Promise<T> => {
 
 export const wordpress = {
 	getCases: async () => requestWordpress<CaseModel[]>('portfolio'),
-	getCasesByTypeId: async (typeId: number) => requestWordpress<CaseModel[]>(`portfolio ? work_type = ${typeId}`),
+	getCasesByTypeId: async (typeId: number) => requestWordpress<CaseModel[]>(`portfolio?work_type=${typeId}`),
 	getWorkTypes: async () => requestWordpress<WorkTypeModel[]>(`work_type`),
-	getMediaById: async (id: number) => requestWordpress<MediaModel>(`media / ${id}`),
+	getMediaById: async (id: number) => requestWordpress<MediaModel>(`media/${id}`),
 }

@@ -1,9 +1,10 @@
-import type { InputHTMLAttributes } from 'react'
 import styles from './Input.module.scss'
 import clsx from 'clsx'
+import { IMaskMixin } from 'react-imask'
 
-export const Input = ({ className, ...props }: InputHTMLAttributes<HTMLInputElement>) => {
+export const Input = IMaskMixin(({ inputRef, className, ...props }) => {
 	return (
-		<input className={clsx(styles.input, className)} {...props} />
+		// @ts-expect-error its seems like imask's bug
+		<input {...props} className={clsx(styles.input, className)} ref={inputRef} />
 	)
-}
+})

@@ -31,6 +31,8 @@ export const PortfolioTab = async (props: PortfolioTabProps) => {
 		portfolio,
 		[7])
 
+	console.log(portfolio)
+
 	return (
 		<TabPanel index={props.category}>
 			<div className={styles.tabHeader}>
