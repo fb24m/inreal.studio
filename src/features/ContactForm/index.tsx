@@ -4,7 +4,7 @@ import { Card } from '@/shared/components/Card'
 import styles from './ContactForm.module.scss'
 import { Title3 } from '@/shared/components/Title3'
 import { Input } from '@/shared/components/Input'
-import { Button } from '@/shared/components/Button'
+import { Button, SubmitButton } from '@/shared/components/Button'
 
 import { createRequest } from './createRequest.action'
 import { usePathname } from 'next/navigation'
@@ -28,8 +28,8 @@ export const ContactForm = () => {
 					<input type="text" readOnly style={{ display: 'none' }} name="pathname" value={pathname} />
 					<Input placeholder="Ваше имя" name="name" />
 					<Input mask="+7 (000) 000-00-00" placeholder="+7 (" type="tel" name="tel" />
-					<button>
-						<Button appearance="primary" size="large">Оставить заявку</Button>
+					<button type="submit">
+						<SubmitButton appearance="primary" size="large">Оставить заявку</SubmitButton>
 					</button>
 				</form>
 			</>

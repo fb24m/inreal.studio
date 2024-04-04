@@ -5,11 +5,8 @@ import { useMedia } from '@/shared/hooks/useMedia.hook'
 import { useEffect } from 'react'
 
 export const HomeBackground = () => {
-	const tablet = useMedia('(max-width: 769px)')
-	const mobile = useMedia('(max-width: 426px)')
+	const pc = useMedia('(min-width: 992px)')
 
-	console.log(tablet)
-	console.log(mobile)
 
 	useEffect(() => {
 		const screens = document.querySelectorAll('.screen')
@@ -22,7 +19,7 @@ export const HomeBackground = () => {
 		for (let i = screens.length - 1; i >= 0; i--) {
 			let screen = screens[i] as HTMLElement
 
-			screen.style.transition = `transform 1.2s, opacity .5s, max-height 1.2s, margin-top 1s`
+			screen.style.transition = `transform 1.2s, opacity .5s, max-height 1.2s, margin-top .85s`
 			screen.style.zIndex = `${i}`
 
 			const nextButton = document.querySelector('[data-next]')
@@ -45,10 +42,12 @@ export const HomeBackground = () => {
 
 					if (image) {
 						image.style.transform = `scale(${1 + (thisScroll / screenHeight) / 2}) translateY(${(thisScroll / screenHeight) * 5}px)`
+						image.style.marginTop = '0'
 					}
 
 					if (video) {
 						video.style.transform = `scale(${1 + (thisScroll / screenHeight) / 2}) translateY(${(thisScroll / screenHeight) * 5}px)`
+						video.style.marginTop = '0'
 					}
 
 					screen.style.opacity = '1'
@@ -57,19 +56,28 @@ export const HomeBackground = () => {
 					screen.style.marginTop = `0px`
 				}
 				else if (thisScroll <= screenHeight) {
-					screen.style.transform = `rotateZ(18deg) scale(.85)`
+					screen.style.transform = `rotateZ(20deg) scale(.75)`
 					screen.style.maxHeight = '0px'
 
-					if (mobile) {
-						screen.style.marginTop = '50%';
-					}
+					const image = screen.querySelector('img')
+					const video = screen.querySelector('video')
 
-					else if (tablet) {
-						screen.style.marginTop = '40%';
+					if (pc) {
+
+						if (image) {
+							image.style.transform = 'scale(1.25) rotateZ(-20deg)'
+							image.style.marginTop = '-28%'
+						}
+						if (video) {
+							video.style.transform = 'scale(1.25) rotateZ(-20deg)'
+							video.style.marginTop = '-28%'
+						}
+
+						screen.style.marginTop = '28%';
 					}
 
 					else {
-						screen.style.marginTop = '28%';
+						screen.style.transform = 'rotateZ(0)'
 					}
 				}
 
@@ -81,7 +89,7 @@ export const HomeBackground = () => {
 				}
 			})
 		}
-	}, [tablet, mobile])
+	}, [pc])
 
 	return (
 		<div id="home-screens">
