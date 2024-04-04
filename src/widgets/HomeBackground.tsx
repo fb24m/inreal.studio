@@ -61,7 +61,7 @@ export const HomeBackground = () => {
 					screen.style.maxHeight = '0px'
 
 					if (mobile) {
-						screen.style.marginTop = '100%';
+						screen.style.marginTop = '50%';
 					}
 
 					else if (tablet) {
