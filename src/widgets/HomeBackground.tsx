@@ -27,7 +27,7 @@ export const HomeBackground = () => {
 			if (nextButton) {
 				nextButton.addEventListener('click', () => {
 					window.scrollTo({
-						top: window.scrollY + screenHeight + 160,
+						top: window.scrollY + screenHeight + 80,
 						behavior: 'smooth'
 					})
 				})
@@ -73,7 +73,7 @@ export const HomeBackground = () => {
 							video.style.marginTop = '-28%'
 						}
 
-						screen.style.marginTop = '28%';
+						screen.style.marginTop = '40vh';
 					}
 
 					else {
