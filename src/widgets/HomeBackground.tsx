@@ -1,9 +1,16 @@
 'use client'
 
 import { HomeScreen } from '@/entities/HomeScreen'
+import { useMedia } from '@/shared/hooks/useMedia.hook'
 import { useEffect } from 'react'
 
 export const HomeBackground = () => {
+	const tablet = useMedia('(max-width: 769px)')
+	const mobile = useMedia('(max-width: 426px)')
+
+	console.log(tablet)
+	console.log(mobile)
+
 	useEffect(() => {
 		const screens = document.querySelectorAll('.screen')
 		const html = document.querySelector('#home-screens')! as HTMLElement
@@ -15,7 +22,7 @@ export const HomeBackground = () => {
 		for (let i = screens.length - 1; i >= 0; i--) {
 			let screen = screens[i] as HTMLElement
 
-			screen.style.transition = `transform 1.2s, opacity .5s, max-height 1.2s, margin-top 1.2s`
+			screen.style.transition = `transform 1.2s, opacity .5s, max-height 1.2s, margin-top 1s`
 			screen.style.zIndex = `${i}`
 
 			const nextButton = document.querySelector('[data-next]')
@@ -23,7 +30,7 @@ export const HomeBackground = () => {
 			if (nextButton) {
 				nextButton.addEventListener('click', () => {
 					window.scrollTo({
-						top: window.scrollY + screenHeight + 20,
+						top: window.scrollY + screenHeight + 160,
 						behavior: 'smooth'
 					})
 				})
@@ -50,9 +57,20 @@ export const HomeBackground = () => {
 					screen.style.marginTop = `0px`
 				}
 				else if (thisScroll <= screenHeight) {
-					screen.style.transform = `rotateZ(30deg) scale(.25)`
+					screen.style.transform = `rotateZ(18deg) scale(.85)`
 					screen.style.maxHeight = '0px'
-					screen.style.marginTop = '28%';
+
+					if (mobile) {
+						screen.style.marginTop = '100%';
+					}
+
+					else if (tablet) {
+						screen.style.marginTop = '40%';
+					}
+
+					else {
+						screen.style.marginTop = '28%';
+					}
 				}
 
 				if (screen.style.opacity === '1') {
@@ -63,7 +81,7 @@ export const HomeBackground = () => {
 				}
 			})
 		}
-	}, [])
+	}, [tablet, mobile])
 
 	return (
 		<div id="home-screens">
