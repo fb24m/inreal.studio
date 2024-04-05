@@ -7,13 +7,40 @@
 	bottom: 0;
 	overflow: hidden;
 
+	transition: transform 1.2s, max-height 1.2s, margin-top .85s;
+
 	img,
 	video {
-		transition: transform 1s, margin-top .8s;
+		@media (min-width: 992px) {
+			transition: transform 1.2s, margin-top .8s;
+		}
+
+		&[data-before-current] {
+			@media (min-width: 992px) {
+				transform: scale(1.25) rotateZ(-20deg);
+				margin-top: -40vh;
+			}
+		}
 	}
 
-	&:not(.top) {
-		opacity: 0;
+	opacity: 0;
+
+	&[data-scrolled] {
+		transform: rotateZ(20deg) scale(.75);
+		margin-top: 40vh;
+		opacity: 1;
+
+		@media (max-width: 769px) {
+			margin-top: 0;
+			transform: rotateZ(0);
+		}
+	}
+
+	&[data-before-scrolled] {
+		transform: none;
+		margin-top: 0;
+
+		opacity: 1;
 	}
 }
 
