@@ -1,7 +1,6 @@
 'use client'
 
 import { HomeScreen } from '@/entities/HomeScreen'
-import { useMedia } from '@/shared/hooks/useMedia.hook'
 import { useEffect } from 'react'
 
 export const HomeBackground = () => {
@@ -32,37 +31,15 @@ export const HomeBackground = () => {
 			window.addEventListener('scroll', () => {
 				const thisScroll = window.scrollY - screenHeight * i
 
-				const image = screen.querySelector('img')
-				const video = screen.querySelector('video')
-
 				if (thisScroll >= 0 && thisScroll <= screenHeight) {
-					if (image) {
-						image.style.transform = `scale(${1 + (thisScroll / screenHeight)})`
-						image.removeAttribute('data-before-current')
-					}
-
-					if (video) {
-						video.style.transform = `scale(${1 + (thisScroll / screenHeight)})`
-						video.removeAttribute('data-before-current')
-					}
-
 					screen.style.maxHeight = `${screenHeight}px`
 
-					screen.removeAttribute('data-scrolled')
 					screen.setAttribute('data-before-scrolled', '')
 				}
 				else if (thisScroll <= screenHeight) {
-					screen.setAttribute('data-scrolled', '')
-					screen.removeAttribute('data-before-scrolled')
-
 					screen.style.maxHeight = '0px'
 
-					if (image) {
-						image.setAttribute('data-before-current', '')
-					}
-					if (video) {
-						video.setAttribute('data-before-current', '')
-					}
+					screen.removeAttribute('data-before-scrolled')
 				}
 			})
 		}
