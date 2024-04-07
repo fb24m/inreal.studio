@@ -8,9 +8,9 @@ export const HomeBackground = () => {
 		const screens = document.querySelectorAll('.screen')
 		const html = document.querySelector('#home-screens')! as HTMLElement
 
-		html.style.height = `${100 * screens.length + 1}vh`
+		html.style.height = `${150 * screens.length + 1}vh`
 
-		const screenHeight = html.scrollHeight / screens.length
+		const screenHeight = html.scrollHeight / screens.length / 1.5
 
 		for (let i = screens.length - 1; i >= 0; i--) {
 			let screen = screens[i] as HTMLElement
