@@ -71,7 +71,7 @@
 
 .top {
 	opacity: 1;
-	max-height: 100% !important;
+	height: 100dvh !important;
 	transform: none !important;
 
 	video,
@@ -90,14 +90,14 @@
 	top: 0;
 	left: 0;
 
-	@media (max-width: 992px) {
+	@media (max-width: 999px) {
 		z-index: auto;
 		position: absolute;
 	}
 }
 
 .imgTag {
-	@media (min-width: 993px) {
+	@media (min-width: 1000px) {
 		display: none;
 	}
 }
