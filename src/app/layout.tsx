@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
 
-    <html lang="en">
+    <html lang="en" data-document-element id="html">
       <body className={jost.className}>
         <div className="wrapper">
           {children}

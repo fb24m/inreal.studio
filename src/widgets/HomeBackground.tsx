@@ -4,6 +4,7 @@ import { HomeScreen } from '@/entities/HomeScreen'
 import { useEffect } from 'react'
 
 export const HomeBackground = () => {
+
 	useEffect(() => {
 		const screens = document.querySelectorAll('.screen')
 		const html = document.querySelector('#home-screens')! as HTMLElement
@@ -22,14 +23,14 @@ export const HomeBackground = () => {
 			if (nextButton) {
 				nextButton.addEventListener('click', () => {
 					window.scrollTo({
-						top: window.scrollY + screenHeight + 10,
+						top: window.scrollY + screenHeight,
 						behavior: 'smooth'
 					})
 				})
 			}
 
 			window.addEventListener('scroll', () => {
-				const thisScroll = window.scrollY - screenHeight * i
+				let thisScroll = window.scrollY - screenHeight * i
 
 				if (thisScroll >= 0 && thisScroll <= screenHeight) {
 					screen.style.maxHeight = `${screenHeight}px`
