@@ -97,7 +97,7 @@
 }
 
 .imgTag {
-	@media (hover: hover) {
+	@media (hover) or (min-width: 1440px) {
 		display: none;
 	}
 }
