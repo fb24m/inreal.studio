@@ -13,8 +13,8 @@ export const HomeScreen = ({ label, image, first, video }: {
 	return (
 		<div className={clsx('screen', wrapper, first && top)}>
 			{video
-				&& <video className={imageEl} autoPlay muted loop preload="metadata"><source media="(hover) or (min-width: 1440px)" src={video} type="video/mp4" /></video>}
-			<Image width={2560} height={1080} src={image} alt="" className={clsx(imageEl, video && imgTag)} {...video && { media: "(max-width: 1440px)" }} />
+				&& <video className={imageEl} autoPlay muted loop preload="metadata"><source media="(hover)" src={video} type="video/mp4" /></video>}
+			<Image width={2560} height={1080} src={image} alt="" className={clsx(imageEl, video && imgTag)} {...video && { media: "(hover: none)" }} />
 			<h2 className={title}>{label}</h2>
 		</div>
 	)
