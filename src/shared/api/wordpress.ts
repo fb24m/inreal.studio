@@ -4,7 +4,7 @@ import { MediaModel } from '../models/Media.model'
 import { WorkTypeModel } from '../models/WorkType.model'
 
 const requestWordpress = async<T>(path: string): Promise<T> => {
-	const response = await request<T>(`${process.env.WP_API}/${path}`, [path], {
+	const response = await request<T>(`https://${process.env.WP_BASE}/${process.env.WP_API_PATH}/${path}`, [path], {
 		'headers': {
 			'Authorization': `Basic ${btoa(process.env.WP_TOKEN!)}`
 		}

@@ -4,7 +4,7 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'inreal.studio',
+				hostname: process.env.WP_BASE,
 				port: '',
 				pathname: '/wp-content/**'
 			}

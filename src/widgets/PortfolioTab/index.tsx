@@ -31,7 +31,7 @@ export const PortfolioTab = async (props: PortfolioTabProps) => {
 		portfolio,
 		[7])
 
-	console.log(portfolio)
+	console.log('portlfolio', portfolio)
 
 	return (
 		<TabPanel index={props.category}>

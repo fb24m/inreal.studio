@@ -1,5 +1,5 @@
 export interface MediaModel {
 	id: number
-	guid: { rendered: string }
+	source_url: string
 	alt_text: string
 }
